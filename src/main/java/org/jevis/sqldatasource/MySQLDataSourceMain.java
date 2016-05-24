@@ -30,12 +30,12 @@ public class MySQLDataSourceMain {
 
     public static void main(String[] args) throws JEVisException {
         JEVisDataSourceSQL _client = new JEVisDataSourceSQL(
-                "openjevis.org", "13306", "jevis", "jevis", "jevistest");
+                  "openjevis.org", "13306", "jevis", "jevis", "jevistest");
         _client.connect("Sys Admin", "JEV34Env");
+//        JEVisObject mysqlServer = _client.getObject(4177l);
         JEVisObject mysqlServer = _client.getObject(4554l);
         MySQLDataSource ds = new MySQLDataSource();
         ds.initialize(mysqlServer);
         ds.run();
-
     }
 }

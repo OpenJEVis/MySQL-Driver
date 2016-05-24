@@ -29,7 +29,8 @@ import java.sql.SQLException;
 public class MySQLDataSource extends SQLDriverAbstract {
 
     @Override
-    public String loadJDBC(String host, int port, String schema, String dbUser, String dbPW, String domain) throws ClassNotFoundException, SQLException {
+    public String loadJDBC(String host, int port, String schema, String dbUser, String dbPW,
+              String domain) throws ClassNotFoundException, SQLException {
         String url = "jdbc:mysql://" + host + ":" + port + "/" + schema + "?";
         _con = DriverManager.getConnection(url, dbUser, dbPW);
         return url;
