@@ -20,6 +20,8 @@ package org.jevis.sqldatasource;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,7 +32,9 @@ public class MySQLDataSource extends SQLDriverAbstract {
 
     @Override
     public String loadJDBC(String host, int port, String schema, String dbUser, String dbPW,
-              String domain) throws ClassNotFoundException, SQLException {
+            String domain) throws ClassNotFoundException, SQLException {
+
+        Logger.getLogger(MySQLDataSource.class.getName()).log(Level.INFO, "MySQLDataSource loadJDBC Version 2017-08-02");
         String url = "jdbc:mysql://" + host + ":" + port + "/" + schema + "?";
         _con = DriverManager.getConnection(url, dbUser, dbPW);
         return url;
